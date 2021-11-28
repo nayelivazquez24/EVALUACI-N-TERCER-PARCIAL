@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Firebase CRUD</title>
+
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/pulse/bootstrap.min.css">
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+
+</head>
+
+<body class="bg-light">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom">
+    <div class="container">
+
+      <a class="navbar-brand" href="#">Final</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item logged-out" style="display: none;">
+            <a class="nav-link" href="#" data-toggle="modal" data-target="#signinModal">Iniciar sesion</a>
+          </li>
+          
+          <li class="nav-item logged-in" >
+            <a class="nav-link" href="#" id="logout">Cerrar sesión</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+ 
+  <div class="container p-4">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+
+            <h1 class="h4">Agregar producto</h1>
+
+            <form id="task-form">
+              <div class="form-group">
+                <input type="text" id="task-title" class="form-control" class="Task Title" placeholder="Nombre del producto"
+                  autofocus>
+              </div>
+              <div class="form-group">
+                <textarea id="task-description" rows="3" class="form-control" placeholder="Descripcion del producto"></textarea>
+              </div>
+
+              <button class="btn btn-primary" id="btn-task-form">
+                Guardar
+              </button>
+
+            </form>
+          </div>
+        </div>
+      </div>
+      
+     
+      <!-- Tasks List -->
+      <div class="col-md-6" id="tasks-container"></div>
+    </div>
+  </div>
+
+  <!-- FIREBASE -->
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-firestore.js"></script>
+
+  <script>
+   
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyCjMcyC30DRZc6pJvUz8Fyak1XxMltGwlY",
+      authDomain: "op123-91f96.firebaseapp.com",
+      databaseURL: "https://op123-91f96-default-rtdb.firebaseio.com",
+      projectId: "op123-91f96",
+      storageBucket: "op123-91f96.appspot.com",
+      messagingSenderId: "659580319473",
+      appId: "1:659580319473:web:092848cccf40882db49b50"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
+  <!-- CUSTOM CODE -->
+  <script src="index.js"></script>
+</body>
+<footer style="text-align: center;">ALZAGA DIAZ SERGIO ARMANDO</footer>
+</html>
